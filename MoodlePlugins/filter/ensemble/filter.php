@@ -67,8 +67,8 @@ private function callback($matches) {
 	// We stream some audio-only content that I want to behave sanely
 	if ($xml->videoEncodings->videoFormat == 'audio/mp3')
 	{
-		$height = '30';
-		$width = '480';
+		$height = "30";
+		$width = "480";
 		$params = $params . '&hideControls=false';
 	} else {
 		$dimensions = $xml->videoEncodings->dimensions;
@@ -78,7 +78,7 @@ private function callback($matches) {
 		$params = $params . '&hideControls=true';
 	}
 	// We could do other stuff, if we wanted.
-	return '<div id="ensembleEmbeddedContent_' . $matches[1] . '" class="ensembleEmbeddedContent" style="width: ' . $width . 'px; height: ' . $height . 'px"><script type="text/javascript" src="'. $ensembleUrl .'/app/plugin/plugin.aspx?contentID=' . $matches[1] . $params '"></script></div>';
+	return '<div id="ensembleEmbeddedContent_' . $matches[1] . '" class="ensembleEmbeddedContent" style="width: ' . $width . 'px; height: ' . $height . 'px"><script type="text/javascript" src="'. $ensembleURL .'/app/plugin/plugin.aspx?contentID=' . $matches[1] . $params . '"></script></div>';
 	    }
 
 

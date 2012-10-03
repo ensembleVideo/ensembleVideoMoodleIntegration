@@ -28,7 +28,6 @@ defined('MOODLE_INTERNAL') || die();
 /// This is the filtering function itself.
 class filter_ensemble extends moodle_text_filter {
 
-
 	public function filter($text, array $options = array()) {
 		global $CFG;
 	
@@ -39,7 +38,7 @@ class filter_ensemble extends moodle_text_filter {
 	    $newtext = $text; // fullclone is slow and not needed here
 // $1 will be the videoID here.	    
 	    if ($CFG->filter_ensemble_enable) {
-$search = '#<a href="https://ensemble.illinois.edu/videoID/([^/]{22})[^<]*<\/a>#is';		    
+$search = array('#<div[^>]*id="ensembleEmbeddedContent_([^"]*)"(.*?)</div>#is','#<a href="'.$CFG->filter_ensemble_url.'/videoID/([^/]{22})[^<]*<\/a>#is');		    
 		$newtext = preg_replace_callback($search, array('filter_ensemble','callback'), $newtext);
 		
 		}
@@ -58,7 +57,8 @@ private function callback($matches) {
 	//
 	// We should pull this from $CFG-> by complicating filtersettings.php
 	// instead of hard coding it
-	$ensembleURL = 'https://ensemble.illinois.edu';
+	global $CFG;
+	$ensembleURL = $CFG->filter_ensemble_url;
 	$ensemble_query_URL = $ensembleURL . '/app/simpleAPI/video/show.xml/' . $matches[1];
 	$c = new curl();
 	$response = $c->get($ensemble_query_URL);

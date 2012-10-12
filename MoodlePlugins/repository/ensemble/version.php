@@ -7,10 +7,10 @@
 //
 // It was written by Liam Moran <moran@illinois.edu> in March, 2012
 //
-// It isn't licensed.
+// GPL language goes here.
 
-$plugin->version = 2012091202;
-$plugin->component = 'Repository_Ensemble';
-$plugin->release = '0.2 (build 2012091202';
+$plugin->version = 2012101205;
+$plugin->component = 'repository_ensemble';
+$plugin->release = '0.5 (build 2012101205';
 
 ?>

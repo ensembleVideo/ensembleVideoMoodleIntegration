@@ -9,8 +9,8 @@
 //
 // GPL language goes here.
 
-$plugin->version = 20121220105;
+$plugin->version = 20130304111;
 $plugin->component = 'repository_ensemble';
-$plugin->release = '1.05 (build 20121220105)';
+$plugin->release = '1.11 (build 20130304111)';
 
 ?>

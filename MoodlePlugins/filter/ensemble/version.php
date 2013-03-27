@@ -9,8 +9,8 @@
 //
 // GPL language goes here.
 
-$plugin->version = 20121220100;
+$plugin->version = 20130225101;
 $plugin->component = 'filter_ensemble';
-$plugin->release = '1.00 (build 20121220100)';
+$plugin->release = '1.01 (build 20130225101)';
 
 ?>
